@@ -4,8 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="samorganist.com.quranpro2.HomeActivity">
+    tools:context="samorganist.com.quranpro2.Home.HomeActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--Top toolbar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relLayout1">
+            <include layout="@layout/layout_top_tabs"></include>
+        </RelativeLayout>
 
-    <include layout="@layout/layout_bottom_navigation"></include>
+        <!--Middle Screen -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/relLayout2"
+            android:layout_below="@+id/relLayout1"
+            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/include">
+            <include layout="@layout/layout_center_viewpager"></include>
+
+        </RelativeLayout>
+
+        <!--bottom navigation  toolbar-->
+        <include layout="@layout/layout_bottom_navigation"
+            android:id="@+id/include"></include>
+
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
